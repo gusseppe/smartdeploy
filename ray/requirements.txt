@@ -1,0 +1,6 @@
+#
+# Custom python packages
+#
+mlflow==1.18.0
+boto3==1.21.21
+scikit-learn==1.1.2

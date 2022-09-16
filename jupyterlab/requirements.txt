@@ -1,0 +1,6 @@
+# Custom python packages
+mlflow
+rich
+deepchecks
+modAL
+ray[serve]==2.0.0rc1
