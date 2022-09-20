@@ -1,4 +1,5 @@
 #!/bin/bash
+
 if [[ $1 == "server" ]]; then
         compose_file="docker-compose-server.yml"
         printf "Welcome to SmartDeploy server\n"
@@ -9,10 +10,10 @@ if [[ $1 == "server" ]]; then
         printf "\n\n"
 fi
 
-printf "Building the components...\n"
+printf "Starting the components...\n"
 printf "\n"
 
-docker-compose  -f ${compose_file} --env-file default.env up -d --build
+docker-compose  -f ${compose_file} --env-file default.env up -d
 
 BCyan='\033[1;36m'
 NC='\033[0m' # No Color
