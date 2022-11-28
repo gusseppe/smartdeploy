@@ -3,7 +3,10 @@ MLOps ecosystem to develop and deploy ML models.
 
 
 # Installation
-For the first time, execute the folowing steps:
+
+- The script `./install.sh` downloads all the images and starts the containers.
+- The script `./run.sh` only starts the containers.
+- The script `./down.sh` shutdown the containers.
 
 ## Linux
 
@@ -27,7 +30,7 @@ Note: If you need Neo4j or Ray, read the following modes.
 
 ## Neo4j mode
 
-It deploys all the components plus Neo$j, it is meant for graph analysis.
+It deploys the minimal components plus Neo4j, it is meant for graph analysis.
 
 - Perform the installation as mentioned above.
 - Run `./install.sh neo` (only run this once)
@@ -35,7 +38,7 @@ It deploys all the components plus Neo$j, it is meant for graph analysis.
 
 ## Server mode
 
-It deploys all the components plus Ray Serve, it is meant for deployment scenarios.
+It deploys the minimal components plus Ray Serve, it is meant for deployment scenarios.
 
 - Perform the installation as mentioned above.
 - Run `./install.sh neo` (only run this once)
