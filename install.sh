@@ -1,12 +1,16 @@
 #!/bin/bash
 if [[ $1 == "server" ]]; then
-        compose_file="docker-compose-server.yml"
-        printf "Welcome to SmartDeploy server\n"
-        printf "\n\n"
-    else
-        compose_file="docker-compose-local.yml"
-        printf "Welcome to SmartDeploy local\n"
-        printf "\n\n"
+    compose_file="docker-compose-server.yml"
+    printf "Welcome to SmartDeploy server\n"
+    printf "\n\n"
+elif [[ $1 == "neo" ]]; then
+    compose_file="docker-compose-local-neo4j.yml"
+    printf "Welcome to SmartDeploy local + Neo4j\n"
+    printf "\n\n"
+else
+    compose_file="docker-compose-local.yml"
+    printf "Welcome to SmartDeploy local\n"
+    printf "\n\n"
 fi
 
 printf "Building the components...\n"
@@ -24,4 +28,7 @@ printf "[+] Tracker [Minio]:\t ${BCyan}http://localhost:9000 ${NC}\n"
 
 if [[ $1 == "server" ]]; then
     printf "[+] Ray Dashboard :\t ${BCyan}http://localhost:8265 ${NC}\n"
+fi
+if [[ $1 == "neo" ]]; then
+    printf "[+] Neo4j Dashboard :\t ${BCyan}http://localhost:7474 ${NC}\n"
 fi
