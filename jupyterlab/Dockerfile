@@ -63,7 +63,6 @@ RUN mamba install --quiet --yes \
     'r-tidyr' \
     'r-rcurl' \
     'r-rmarkdown' \
-    'r-languageserver' \
     'r-tidyverse' && \
     mamba clean --all -f -y && \
     fix-permissions "${CONDA_DIR}" && \

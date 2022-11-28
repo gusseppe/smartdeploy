@@ -1,6 +1,8 @@
 # Custom python packages
-mlflow
-rich
-deepchecks
-modAL
-ray[serve]==2.0.0rc1
+mlflow==1.30.0
+rich==12.6.0
+deepchecks==0.9.2
+#modAL
+#ray[serve]==2.0.0rc1
+ray[serve]==2.1.0
+neo4j==5.3.0
