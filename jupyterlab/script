@@ -1,6 +1,0 @@
-" Add here the spark runtime image
-elyra-metadata create runtime-images \
-       --name "Spark" \
-       --display_name "Spark image" \
-       --description "Pyspark and SparkR" \
-       --image_name "jupyter/all-spark-notebook"

@@ -74,8 +74,8 @@ services:
 
   jupyterlab:
     restart: always
-    build: ./jupyterlab
-    image: jupyterlab-elyra
+    build: ./jupyterlab-minimal
+    image: jupyterlab-elyra-minimal
     container_name: jupyterlab
     working_dir: /home/${NB_USER}
     user: root
@@ -85,7 +85,7 @@ services:
       - tracking_server
     volumes:
       - ./notebooks:/home/${NB_USER}
-#- ./notebooks/.cache/pip:/root/.cache/pip
+      - ./notebooks/.cache-root/pip:/root/.cache/pip
 #- ./notebooks/.cache/pip:/opt/conda/lib/python3.10/site-packages
     networks:
       - frontend

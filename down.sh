@@ -8,6 +8,10 @@ elif [[ $1 == "neo" ]]; then
     compose_file="docker-compose-local-neo4j.yml"
     printf "Welcome to SmartDeploy local + Neo4j\n"
     printf "\n\n"
+elif [[ $1 == "minimal" ]]; then
+    compose_file="docker-compose-local-minimal.yml"
+    printf "Welcome to SmartDeploy local minimal\n"
+    printf "\n\n"
 else
     compose_file="docker-compose-local.yml"
     printf "Welcome to SmartDeploy local\n"
