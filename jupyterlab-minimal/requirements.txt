@@ -1,0 +1,5 @@
+# Mandatory libraries
+mlflow==1.30.0
+rich==12.6.0
+deepchecks==0.9.2
+ray[serve]==2.1.0
