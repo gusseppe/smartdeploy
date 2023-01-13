@@ -74,11 +74,10 @@ services:
 
   jupyterlab:
     restart: always
-    build: ./jupyterlab-minimal
-    image: jupyterlab-elyra-minimal
+    build: ./jupyterlab-pyspark
+    image: jupyterlab-elyra-pyspark
     container_name: jupyterlab
     working_dir: /home/${NB_USER}
-    shm_size: '11gb'
     user: root
     ports:
       - "${JUPYTER_PORT}:8888"
