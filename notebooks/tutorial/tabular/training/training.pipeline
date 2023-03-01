@@ -14,23 +14,19 @@
           "op": "execute-notebook-node",
           "app_data": {
             "component_parameters": {
-              "dependencies": [],
-              "include_subdirectories": false,
+              "filename": "training/preprocessing.ipynb",
               "outputs": [],
               "env_vars": [],
-              "kubernetes_pod_annotations": [],
-              "kubernetes_pod_labels": [],
-              "kubernetes_secrets": [],
-              "kubernetes_tolerations": [],
-              "mounted_volumes": [],
-              "filename": "../inferencia/preprocessing.ipynb"
+              "dependencies": [],
+              "include_subdirectories": false,
+              "mounted_volumes": []
             },
-            "label": "Preprocessing",
+            "label": "preprocessing",
             "ui_data": {
-              "label": "Preprocessing",
+              "label": "preprocessing",
               "image": "/static/elyra/notebook.svg",
-              "x_pos": 690,
-              "y_pos": 246.5,
+              "x_pos": 534,
+              "y_pos": 247.5,
               "description": "Run notebook file"
             }
           },
@@ -48,8 +44,8 @@
               },
               "links": [
                 {
-                  "id": "0cd79584-bb46-4cca-b1e7-675fbc78d984",
-                  "node_id_ref": "eeceaa2c-4b16-455d-b57c-c723abc6aef4",
+                  "id": "1b937617-0ae7-4a6f-8384-84ef87814f74",
+                  "node_id_ref": "1d2519c6-5719-4e1b-b4ce-9be65e1bf592",
                   "port_id_ref": "outPort"
                 }
               ]
@@ -83,15 +79,16 @@
               "kubernetes_pod_annotations": [],
               "kubernetes_pod_labels": [],
               "kubernetes_secrets": [],
+              "kubernetes_shared_mem_size": {},
               "kubernetes_tolerations": [],
               "mounted_volumes": [],
-              "filename": "../inferencia/load_data.ipynb"
+              "filename": "training/load_data.ipynb"
             },
-            "label": "Load dataset",
+            "label": "load_dataset",
             "ui_data": {
-              "label": "Load dataset",
+              "label": "load_dataset",
               "image": "/static/elyra/notebook.svg",
-              "x_pos": 159,
+              "x_pos": 294,
               "y_pos": 248.5,
               "description": "Run notebook file"
             }
@@ -107,128 +104,11 @@
                   },
                   "label": "Input Port"
                 }
-              }
-            }
-          ],
-          "outputs": [
-            {
-              "id": "outPort",
-              "app_data": {
-                "ui_data": {
-                  "cardinality": {
-                    "min": 0,
-                    "max": -1
-                  },
-                  "label": "Output Port"
-                }
-              }
-            }
-          ]
-        },
-        {
-          "id": "eeceaa2c-4b16-455d-b57c-c723abc6aef4",
-          "type": "execution_node",
-          "op": "execute-notebook-node",
-          "app_data": {
-            "component_parameters": {
-              "dependencies": [],
-              "include_subdirectories": false,
-              "outputs": [],
-              "env_vars": [],
-              "kubernetes_pod_annotations": [],
-              "kubernetes_pod_labels": [],
-              "kubernetes_secrets": [],
-              "kubernetes_tolerations": [],
-              "mounted_volumes": [],
-              "filename": "../inferencia/checker_integrity.ipynb"
-            },
-            "label": "Check Integrity",
-            "ui_data": {
-              "label": "Check Integrity",
-              "image": "/static/elyra/notebook.svg",
-              "x_pos": 425,
-              "y_pos": 246.5,
-              "description": "Run notebook file"
-            }
-          },
-          "inputs": [
-            {
-              "id": "inPort",
-              "app_data": {
-                "ui_data": {
-                  "cardinality": {
-                    "min": 0,
-                    "max": -1
-                  },
-                  "label": "Input Port"
-                }
               },
               "links": [
                 {
-                  "id": "07cfb975-400c-4c14-a65f-1c127fa36f77",
-                  "node_id_ref": "1d2519c6-5719-4e1b-b4ce-9be65e1bf592",
-                  "port_id_ref": "outPort"
-                }
-              ]
-            }
-          ],
-          "outputs": [
-            {
-              "id": "outPort",
-              "app_data": {
-                "ui_data": {
-                  "cardinality": {
-                    "min": 0,
-                    "max": -1
-                  },
-                  "label": "Output Port"
-                }
-              }
-            }
-          ]
-        },
-        {
-          "id": "a2c40e2e-f5fc-423f-9fe7-4de60d66fff5",
-          "type": "execution_node",
-          "op": "execute-notebook-node",
-          "app_data": {
-            "component_parameters": {
-              "dependencies": [],
-              "include_subdirectories": false,
-              "outputs": [],
-              "env_vars": [],
-              "kubernetes_pod_annotations": [],
-              "kubernetes_pod_labels": [],
-              "kubernetes_secrets": [],
-              "kubernetes_tolerations": [],
-              "mounted_volumes": [],
-              "filename": "../inferencia/checker_drift.ipynb"
-            },
-            "label": "Check Drift",
-            "ui_data": {
-              "label": "Check Drift",
-              "image": "/static/elyra/notebook.svg",
-              "x_pos": 941.0000610351562,
-              "y_pos": 246,
-              "description": "Run notebook file"
-            }
-          },
-          "inputs": [
-            {
-              "id": "inPort",
-              "app_data": {
-                "ui_data": {
-                  "cardinality": {
-                    "min": 0,
-                    "max": -1
-                  },
-                  "label": "Input Port"
-                }
-              },
-              "links": [
-                {
-                  "id": "eb0a8ea3-c546-4a9a-93de-10d5557b09e6",
-                  "node_id_ref": "d9a534da-9b7c-4c94-a7bf-958a9a3d21ef",
+                  "id": "c47310d6-0713-4cf3-81c6-db44e871fa0c",
+                  "node_id_ref": "8d6a03a3-7bb0-403d-bb26-0b04b92c3a48",
                   "port_id_ref": "outPort"
                 }
               ]
@@ -255,23 +135,19 @@
           "op": "execute-notebook-node",
           "app_data": {
             "component_parameters": {
-              "dependencies": [],
-              "include_subdirectories": false,
+              "filename": "training/training.ipynb",
               "outputs": [],
               "env_vars": [],
-              "kubernetes_pod_annotations": [],
-              "kubernetes_pod_labels": [],
-              "kubernetes_secrets": [],
-              "kubernetes_tolerations": [],
-              "mounted_volumes": [],
-              "filename": "../inferencia/predictor-batch.ipynb"
+              "dependencies": [],
+              "include_subdirectories": false,
+              "mounted_volumes": []
             },
-            "label": "Predictor",
+            "label": "training",
             "ui_data": {
-              "label": "Predictor",
+              "label": "training",
               "image": "/static/elyra/notebook.svg",
-              "x_pos": 987,
-              "y_pos": 451,
+              "x_pos": 777,
+              "y_pos": 247,
               "description": "Run notebook file"
             }
           },
@@ -289,11 +165,67 @@
               },
               "links": [
                 {
-                  "id": "fd488d6b-7a3e-4c20-ac64-ce21a2f41010",
-                  "node_id_ref": "a2c40e2e-f5fc-423f-9fe7-4de60d66fff5",
+                  "id": "254d2224-b90a-43e3-9457-04f8019392b8",
+                  "node_id_ref": "d9a534da-9b7c-4c94-a7bf-958a9a3d21ef",
                   "port_id_ref": "outPort"
                 }
               ]
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "8d6a03a3-7bb0-403d-bb26-0b04b92c3a48",
+          "type": "execution_node",
+          "op": "execute-notebook-node",
+          "app_data": {
+            "component_parameters": {
+              "dependencies": [],
+              "include_subdirectories": false,
+              "outputs": [],
+              "env_vars": [],
+              "kubernetes_pod_annotations": [],
+              "kubernetes_pod_labels": [],
+              "kubernetes_secrets": [],
+              "kubernetes_shared_mem_size": {},
+              "kubernetes_tolerations": [],
+              "mounted_volumes": [],
+              "filename": "training/install.ipynb"
+            },
+            "label": "Instalacion",
+            "ui_data": {
+              "label": "Instalacion",
+              "image": "/static/elyra/notebook.svg",
+              "x_pos": 50.99999237060547,
+              "y_pos": 247,
+              "description": "Run notebook file"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Input Port"
+                }
+              }
             }
           ],
           "outputs": [
@@ -317,11 +249,11 @@
           "comments": [
             {
               "id": "670f6ea8-9b52-4bf3-8a6c-70d7922dbe91",
-              "x_pos": 147,
-              "y_pos": 142,
+              "x_pos": 278,
+              "y_pos": 143,
               "width": 175,
-              "height": 45,
-              "content": "Cargar data cruda y darle formato",
+              "height": 60,
+              "content": "Cargar data de entrenamiento y darle formato",
               "associated_id_refs": [
                 {
                   "node_ref": "1d2519c6-5719-4e1b-b4ce-9be65e1bf592"
@@ -329,25 +261,12 @@
               ]
             },
             {
-              "id": "096d9ea6-1d32-4682-9d1d-47946f23ed61",
-              "x_pos": 399.0000305175781,
-              "y_pos": 371,
+              "id": "5475b55d-7ca6-4aba-8c90-8226b75d51d4",
+              "x_pos": 512,
+              "y_pos": 144,
               "width": 175,
               "height": 45,
-              "content": "Verificar integridad de los datos",
-              "associated_id_refs": [
-                {
-                  "node_ref": "eeceaa2c-4b16-455d-b57c-c723abc6aef4"
-                }
-              ]
-            },
-            {
-              "id": "5475b55d-7ca6-4aba-8c90-8226b75d51d4",
-              "x_pos": 666,
-              "y_pos": 138,
-              "width": 175,
-              "height": 42,
-              "content": "Limpieza y preparacion",
+              "content": "Limpieza y creación de variables/features",
               "associated_id_refs": [
                 {
                   "node_ref": "d9a534da-9b7c-4c94-a7bf-958a9a3d21ef"
@@ -356,36 +275,36 @@
             },
             {
               "id": "5ff543f5-0de3-4439-b8e4-bf10774a0f48",
-              "x_pos": 524,
-              "y_pos": 31.99999237060547,
+              "x_pos": 387,
+              "y_pos": 43,
               "width": 171,
               "height": 45,
-              "content": "Workflow de deployment",
+              "content": "Pipeline de entrenamiento",
               "associated_id_refs": []
             },
             {
-              "id": "a08d6c1a-0bdb-4930-99fe-da97cf1439cf",
-              "x_pos": 930.0000610351562,
-              "y_pos": 142,
+              "id": "d0659629-268d-4c21-aa4c-91d1314c3751",
+              "x_pos": 770,
+              "y_pos": 144,
               "width": 175,
-              "height": 45,
-              "content": "Detectar cambios en la distribución del input",
+              "height": 42,
+              "content": "Creación del modelo",
               "associated_id_refs": [
                 {
-                  "node_ref": "a2c40e2e-f5fc-423f-9fe7-4de60d66fff5"
+                  "node_ref": "07049eb6-619b-4c11-b3e4-32973ebf966f"
                 }
               ]
             },
             {
-              "id": "c56d941a-ceab-4ccb-a34a-a56fc1e25f74",
-              "x_pos": 720,
-              "y_pos": 387,
+              "id": "3d65eed7-eb35-4f8c-884c-1b27d46f69ce",
+              "x_pos": 46,
+              "y_pos": 147,
               "width": 175,
               "height": 45,
-              "content": "Predicción usando el modelo",
+              "content": "Instalar librerías necesarias",
               "associated_id_refs": [
                 {
-                  "node_ref": "07049eb6-619b-4c11-b3e4-32973ebf966f"
+                  "node_ref": "8d6a03a3-7bb0-403d-bb26-0b04b92c3a48"
                 }
               ]
             }
@@ -394,9 +313,16 @@
         "version": 8,
         "properties": {
           "pipeline_defaults": {
+            "mounted_volumes": [],
+            "kubernetes_shared_mem_size": {},
+            "kubernetes_pod_annotations": [],
+            "kubernetes_pod_labels": [],
+            "kubernetes_tolerations": [],
+            "kubernetes_secrets": [],
+            "env_vars": [],
             "runtime_image": "tensorflow/tensorflow:2.8.0"
           },
-          "name": "inference-batch",
+          "name": "training",
           "runtime": "Generic"
         }
       },
