@@ -2,28 +2,22 @@
 
 if [[ $1 == "server" ]]; then
     compose_file="docker-compose-server.yml"
-    printf "Welcome to SmartDeploy server\n"
-    printf "\n\n"
+    printf "\e[1mWelcome to SmartDeploy server\e[0m\n\n"
 elif [[ $1 == "neo" ]]; then
     compose_file="docker-compose-local-neo4j.yml"
-    printf "Welcome to SmartDeploy local + Neo4j\n"
-    printf "\n\n"
+    printf "\e[1mWelcome to SmartDeploy local + Neo4j\e[0m\n\n"
 elif [[ $1 == "minimal" ]]; then
     compose_file="docker-compose-local-minimal.yml"
-    printf "Welcome to SmartDeploy local minimal\n"
-    printf "\n\n"
+    printf "\e[1mWelcome to SmartDeploy local minimal\e[0m\n\n"
 elif [[ $1 == "pyspark" ]]; then
     compose_file="docker-compose-local-pyspark.yml"
-    printf "Welcome to SmartDeploy local pyspark\n"
-    printf "\n\n"
+    printf "\e[1mWelcome to SmartDeploy local pyspark\e[0m\n\n"
 else
     compose_file="docker-compose-local.yml"
-    printf "Welcome to SmartDeploy local\n"
-    printf "\n\n"
+    printf "\e[1mWelcome to SmartDeploy local\e[0m\n\n"
 fi
 
-printf "Starting the components...\n"
-printf "\n"
+printf "\e[1mStarting the components...\e[0m\n\n"
 
 docker-compose  -f ${compose_file} --env-file default.env up -d
 
@@ -37,6 +31,12 @@ printf "[+] Tracker [Minio]:\t ${BCyan}http://localhost:9000 ${NC}\n"
 
 if [[ $1 == "server" ]]; then
     printf "[+] Ray Dashboard :\t ${BCyan}http://localhost:8265 ${NC}\n"
+    echo "Waiting for Jenkins service to start up..."
+    sleep 3
+    printf "[+] Jenkins Dashboard :\t ${BCyan}http://localhost:8084 ${NC}\n"
+    PASSWORD=$(docker-compose -f docker-compose-server.yml logs --no-color jenkins 2>&1 | grep 'Please use the following password' -A 2 | tail -n 1 | tr -d '\r' | awk '{print $3}')
+    printf "[+] Jenkins Initial Password :\t ${BCyan} ${PASSWORD} ${NC}\n"
+
 fi
 if [[ $1 == "neo" ]]; then
     printf "[+] Neo4j Dashboard :\t ${BCyan}http://localhost:7474 ${NC}\n"

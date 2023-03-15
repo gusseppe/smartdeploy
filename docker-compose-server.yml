@@ -74,8 +74,8 @@ services:
 
   jupyterlab:
     restart: always
-    build: ./jupyterlab
-    image: jupyterlab-elyra
+    build: ./jupyterlab-pyspark
+    image: jupyterlab-elyra-pyspark
     container_name: jupyterlab
     working_dir: /home/${NB_USER}
     user: root
@@ -85,6 +85,7 @@ services:
       - tracking_server
     volumes:
       - ./notebooks:/home/${NB_USER}
+      - ./notebooks/.cache-root/pip:/root/.cache/pip
     networks:
       - frontend
       - backend
@@ -104,7 +105,7 @@ services:
   ray-head:
     restart: always
     build: ./ray
-    image: rayproject/ray:2.0.0rc1-py310-cpu
+    image: rayproject/ray:2.2.0
     container_name: ray
     ports:
       - "${REDISPORT}:6379"
@@ -120,13 +121,40 @@ services:
       - MLFLOW_S3_ENDPOINT_URL=http://s3:${MINIO_PORT}
       - AWS_ACCESS_KEY_ID=${MINIO_ACCESS_KEY}
       - AWS_SECRET_ACCESS_KEY=${MINIO_SECRET_ACCESS_KEY}
+      
+  jenkins:
+    image: jenkins/jenkins:lts
+    ports:
+      - "8084:8080"
+      - "50000:50000"
+    environment:
+      - JENKINS_ADMIN_PASSWORD=jenkins
+    volumes:
+      - "jenkins-data:/var/jenkins_home"
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    networks:
+      - jenkins
+
+  docker:
+    image: docker:dind
+    privileged: true
+    environment:
+      - DOCKER_TLS_CERTDIR=/certs
+    volumes:
+      - "jenkins-docker-certs:/certs/client"
+    networks:
+      - jenkins
 
 volumes:
   db_data:
   minio_data:
+  jenkins-data:
+  jenkins-docker-certs:
 
 networks:
   frontend:
     driver: bridge
   backend:
+    driver: bridge
+  jenkins:
     driver: bridge
