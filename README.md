@@ -23,10 +23,15 @@ MLOps ecosystem to develop and deploy ML models.
 
 It deploys the minimal components to write pipelines.
 
-- Run `./install.sh` (only run this once)
-- Then, only just `./run.sh` (afterwards)
+- Run `./install.sh minimal` (only run this once)
+- Then, only just `./run.sh minimal` (afterwards)
 
-Note: If you need Neo4j or Ray, read the following modes.
+## Minimal + Pyspark mode
+
+It deploys the minimal components to write pipelines.
+
+- Run `./install.sh pyspark` (only run this once)
+- Then, only just `./run.sh pyspark` (afterwards)
 
 ## Neo4j mode
 
@@ -36,13 +41,13 @@ It deploys the minimal components plus Neo4j, it is meant for graph analysis.
 - Run `./install.sh neo` (only run this once)
 - Then, only just `./run.sh neo` (afterwards)
 
-## Server mode
+## Server mode + jenkins
 
 It deploys the minimal components plus Ray Serve, it is meant for deployment scenarios.
 
 - Perform the installation as mentioned above.
-- Run `./install.sh neo` (only run this once)
-- Then, only just `./run.sh neo` (afterwards)
+- Run `./install.sh server` (only run this once)
+- Then, only just `./run.sh server` (afterwards)
 
 # Shutdown 
 
