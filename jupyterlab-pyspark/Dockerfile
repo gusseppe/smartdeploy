@@ -27,7 +27,7 @@ RUN echo "NODE Version:" && node --version
 RUN echo "NPM Version:" && npm --version
 
 # Install Elyra
-RUN  pip3 install --upgrade pip==22.2.2  && pip3 install --no-cache-dir  --upgrade  elyra[all]
+RUN  pip3 install --upgrade pip==23.0.1 && pip3 install --no-cache-dir  --upgrade  elyra[all]==3.14.3
 RUN jupyter lab  build --dev-build=False --minimize=False
 
 #  Install python packages

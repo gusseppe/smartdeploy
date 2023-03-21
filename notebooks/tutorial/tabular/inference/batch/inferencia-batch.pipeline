@@ -9,24 +9,85 @@
       "id": "primary",
       "nodes": [
         {
-          "id": "d9a534da-9b7c-4c94-a7bf-958a9a3d21ef",
+          "id": "30603592-4af7-4b30-aaa9-de5abbde5286",
           "type": "execution_node",
           "op": "execute-notebook-node",
           "app_data": {
+            "label": "",
             "component_parameters": {
-              "filename": "inferencia/preprocessing.ipynb",
-              "outputs": [],
-              "env_vars": [],
               "dependencies": [],
               "include_subdirectories": false,
-              "mounted_volumes": []
+              "outputs": [],
+              "env_vars": [],
+              "kubernetes_pod_annotations": [],
+              "kubernetes_pod_labels": [],
+              "kubernetes_secrets": [],
+              "kubernetes_shared_mem_size": {},
+              "kubernetes_tolerations": [],
+              "mounted_volumes": [],
+              "filename": "artifacts/load_data.ipynb"
             },
-            "label": "preprocessing",
             "ui_data": {
-              "label": "preprocessing",
+              "label": "load_data.ipynb",
               "image": "/static/elyra/notebook.svg",
-              "x_pos": 484,
-              "y_pos": 239.5,
+              "x_pos": 168,
+              "y_pos": 258,
+              "description": "Run notebook file"
+            }
+          },
+          "inputs": [
+            {
+              "id": "inPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Input Port"
+                }
+              }
+            }
+          ],
+          "outputs": [
+            {
+              "id": "outPort",
+              "app_data": {
+                "ui_data": {
+                  "cardinality": {
+                    "min": 0,
+                    "max": -1
+                  },
+                  "label": "Output Port"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "id": "f12b97f5-05d1-45b3-a8dd-70cb22bc2df5",
+          "type": "execution_node",
+          "op": "execute-notebook-node",
+          "app_data": {
+            "label": "",
+            "component_parameters": {
+              "dependencies": [],
+              "include_subdirectories": false,
+              "outputs": [],
+              "env_vars": [],
+              "kubernetes_pod_annotations": [],
+              "kubernetes_pod_labels": [],
+              "kubernetes_secrets": [],
+              "kubernetes_shared_mem_size": {},
+              "kubernetes_tolerations": [],
+              "mounted_volumes": [],
+              "filename": "artifacts/preprocessing.ipynb"
+            },
+            "ui_data": {
+              "label": "preprocessing.ipynb",
+              "image": "/static/elyra/notebook.svg",
+              "x_pos": 489,
+              "y_pos": 254,
               "description": "Run notebook file"
             }
           },
@@ -44,8 +105,8 @@
               },
               "links": [
                 {
-                  "id": "67452d1a-4537-4281-9231-af51ff78d6d5",
-                  "node_id_ref": "1d2519c6-5719-4e1b-b4ce-9be65e1bf592",
+                  "id": "45211381-1737-4694-b4d3-ef3dbf52cd61",
+                  "node_id_ref": "30603592-4af7-4b30-aaa9-de5abbde5286",
                   "port_id_ref": "outPort"
                 }
               ]
@@ -67,75 +128,29 @@
           ]
         },
         {
-          "id": "1d2519c6-5719-4e1b-b4ce-9be65e1bf592",
+          "id": "c8727423-c386-4c32-8524-cdddc3078fd9",
           "type": "execution_node",
           "op": "execute-notebook-node",
           "app_data": {
+            "label": "",
             "component_parameters": {
-              "filename": "inferencia/load_data.ipynb",
-              "outputs": [],
-              "env_vars": [],
               "dependencies": [],
               "include_subdirectories": false,
-              "mounted_volumes": []
-            },
-            "label": "load_new_data",
-            "ui_data": {
-              "label": "load_new_data",
-              "image": "/static/elyra/notebook.svg",
-              "x_pos": 158,
-              "y_pos": 239.5,
-              "description": "Run notebook file"
-            }
-          },
-          "inputs": [
-            {
-              "id": "inPort",
-              "app_data": {
-                "ui_data": {
-                  "cardinality": {
-                    "min": 0,
-                    "max": -1
-                  },
-                  "label": "Input Port"
-                }
-              }
-            }
-          ],
-          "outputs": [
-            {
-              "id": "outPort",
-              "app_data": {
-                "ui_data": {
-                  "cardinality": {
-                    "min": 0,
-                    "max": -1
-                  },
-                  "label": "Output Port"
-                }
-              }
-            }
-          ]
-        },
-        {
-          "id": "07049eb6-619b-4c11-b3e4-32973ebf966f",
-          "type": "execution_node",
-          "op": "execute-notebook-node",
-          "app_data": {
-            "component_parameters": {
-              "filename": "inferencia/predictor-batch.ipynb",
               "outputs": [],
               "env_vars": [],
-              "dependencies": [],
-              "include_subdirectories": false,
-              "mounted_volumes": []
+              "kubernetes_pod_annotations": [],
+              "kubernetes_pod_labels": [],
+              "kubernetes_secrets": [],
+              "kubernetes_shared_mem_size": {},
+              "kubernetes_tolerations": [],
+              "mounted_volumes": [],
+              "filename": "artifacts/predictor-batch.ipynb"
             },
-            "label": "predictor",
             "ui_data": {
-              "label": "predictor",
+              "label": "predictor-batch.ipynb",
               "image": "/static/elyra/notebook.svg",
-              "x_pos": 814,
-              "y_pos": 239,
+              "x_pos": 807,
+              "y_pos": 255,
               "description": "Run notebook file"
             }
           },
@@ -153,8 +168,8 @@
               },
               "links": [
                 {
-                  "id": "505c6a02-2bfb-4b86-b4dc-10d115799b33",
-                  "node_id_ref": "d9a534da-9b7c-4c94-a7bf-958a9a3d21ef",
+                  "id": "ceda2719-c11c-4f34-aa1d-8ed41a7a53db",
+                  "node_id_ref": "f12b97f5-05d1-45b3-a8dd-70cb22bc2df5",
                   "port_id_ref": "outPort"
                 }
               ]
@@ -188,7 +203,8 @@
               "content": "Cargar nueva data y darle formato",
               "associated_id_refs": [
                 {
-                  "node_ref": "1d2519c6-5719-4e1b-b4ce-9be65e1bf592"
+                  "id": "488f38ba-490f-4f4a-9f06-1bf9bb3a86d7",
+                  "node_ref": "30603592-4af7-4b30-aaa9-de5abbde5286"
                 }
               ]
             },
@@ -199,11 +215,7 @@
               "width": 175,
               "height": 45,
               "content": "Limpieza y creación de variables/features",
-              "associated_id_refs": [
-                {
-                  "node_ref": "d9a534da-9b7c-4c94-a7bf-958a9a3d21ef"
-                }
-              ]
+              "associated_id_refs": []
             },
             {
               "id": "5ff543f5-0de3-4439-b8e4-bf10774a0f48",
@@ -223,7 +235,8 @@
               "content": "Predicción usando el modelo",
               "associated_id_refs": [
                 {
-                  "node_ref": "07049eb6-619b-4c11-b3e4-32973ebf966f"
+                  "id": "143991f6-8af4-4db9-a059-573869f3571b",
+                  "node_ref": "c8727423-c386-4c32-8524-cdddc3078fd9"
                 }
               ]
             }
@@ -232,6 +245,13 @@
         "version": 8,
         "properties": {
           "pipeline_defaults": {
+            "kubernetes_shared_mem_size": {},
+            "kubernetes_pod_annotations": [],
+            "kubernetes_tolerations": [],
+            "mounted_volumes": [],
+            "kubernetes_pod_labels": [],
+            "env_vars": [],
+            "kubernetes_secrets": [],
             "runtime_image": "tensorflow/tensorflow:2.8.0"
           },
           "name": "inferencia-batch",
