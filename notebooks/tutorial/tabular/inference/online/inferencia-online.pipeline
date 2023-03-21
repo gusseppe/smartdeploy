@@ -169,6 +169,15 @@
                   "node_ref": "1371035b-ab17-467c-8d36-223072949642"
                 }
               ]
+            },
+            {
+              "id": "b6d5e447-42f8-40ea-9219-ecea5191cccb",
+              "x_pos": 71.00003051757812,
+              "y_pos": 50,
+              "width": 175,
+              "height": 60,
+              "content": "**Nota: este pipeline funciona con la version \"server\" de smartdeploy**",
+              "associated_id_refs": []
             }
           ]
         },
