@@ -13,7 +13,6 @@
           "type": "execution_node",
           "op": "execute-notebook-node",
           "app_data": {
-            "label": "",
             "component_parameters": {
               "dependencies": [],
               "include_subdirectories": false,
@@ -27,8 +26,9 @@
               "mounted_volumes": [],
               "filename": "artifacts/load_data.ipynb"
             },
+            "label": "load_data",
             "ui_data": {
-              "label": "load_data.ipynb",
+              "label": "load_data",
               "image": "/static/elyra/notebook.svg",
               "x_pos": 168,
               "y_pos": 258,
@@ -69,7 +69,6 @@
           "type": "execution_node",
           "op": "execute-notebook-node",
           "app_data": {
-            "label": "",
             "component_parameters": {
               "dependencies": [],
               "include_subdirectories": false,
@@ -83,11 +82,12 @@
               "mounted_volumes": [],
               "filename": "artifacts/preprocessing.ipynb"
             },
+            "label": "preprocessing",
             "ui_data": {
-              "label": "preprocessing.ipynb",
+              "label": "preprocessing",
               "image": "/static/elyra/notebook.svg",
-              "x_pos": 489,
-              "y_pos": 254,
+              "x_pos": 490,
+              "y_pos": 257,
               "description": "Run notebook file"
             }
           },
@@ -132,7 +132,6 @@
           "type": "execution_node",
           "op": "execute-notebook-node",
           "app_data": {
-            "label": "",
             "component_parameters": {
               "dependencies": [],
               "include_subdirectories": false,
@@ -146,11 +145,12 @@
               "mounted_volumes": [],
               "filename": "artifacts/predictor-batch.ipynb"
             },
+            "label": "predictor",
             "ui_data": {
-              "label": "predictor-batch.ipynb",
+              "label": "predictor",
               "image": "/static/elyra/notebook.svg",
               "x_pos": 807,
-              "y_pos": 255,
+              "y_pos": 256,
               "description": "Run notebook file"
             }
           },
@@ -246,9 +246,9 @@
         "properties": {
           "pipeline_defaults": {
             "kubernetes_shared_mem_size": {},
-            "kubernetes_pod_annotations": [],
             "kubernetes_tolerations": [],
             "mounted_volumes": [],
+            "kubernetes_pod_annotations": [],
             "kubernetes_pod_labels": [],
             "env_vars": [],
             "kubernetes_secrets": [],
