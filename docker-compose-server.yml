@@ -85,7 +85,6 @@ services:
       - tracking_server
     volumes:
       - ./notebooks:/home/${NB_USER}
-      - ./notebooks/.cache-root/pip:/root/.cache/pip
     networks:
       - frontend
       - backend

@@ -9,7 +9,7 @@
       "id": "primary",
       "nodes": [
         {
-          "id": "a77624ce-bff1-4d4a-ae27-ff64283ee184",
+          "id": "1ef4bb28-feea-4b19-87a2-cacc6195d395",
           "type": "execution_node",
           "op": "execute-notebook-node",
           "app_data": {
@@ -24,15 +24,15 @@
               "kubernetes_shared_mem_size": {},
               "kubernetes_tolerations": [],
               "mounted_volumes": [],
-              "filename": "serving.ipynb",
+              "filename": "artifacts/serving.ipynb",
               "runtime_image": "continuumio/anaconda3@sha256:a2816acd3acda208d92e0bf6c11eb41fda9009ea20f24e123dbf84bb4bd4c4b8"
             },
             "label": "serving",
             "ui_data": {
               "label": "serving",
               "image": "/static/elyra/notebook.svg",
-              "x_pos": 192,
-              "y_pos": 303,
+              "x_pos": 198,
+              "y_pos": 307,
               "description": "Run notebook file"
             }
           },
@@ -66,7 +66,7 @@
           ]
         },
         {
-          "id": "1371035b-ab17-467c-8d36-223072949642",
+          "id": "32be6672-da93-40eb-bb02-28eb71867aaa",
           "type": "execution_node",
           "op": "execute-notebook-node",
           "app_data": {
@@ -81,15 +81,15 @@
               "kubernetes_shared_mem_size": {},
               "kubernetes_tolerations": [],
               "mounted_volumes": [],
-              "filename": "client.ipynb",
+              "filename": "artifacts/client.ipynb",
               "runtime_image": "continuumio/anaconda3@sha256:a2816acd3acda208d92e0bf6c11eb41fda9009ea20f24e123dbf84bb4bd4c4b8"
             },
             "label": "cliente",
             "ui_data": {
               "label": "cliente",
               "image": "/static/elyra/notebook.svg",
-              "x_pos": 647,
-              "y_pos": 302,
+              "x_pos": 667,
+              "y_pos": 309,
               "description": "Run notebook file"
             }
           },
@@ -107,8 +107,8 @@
               },
               "links": [
                 {
-                  "id": "0abc2498-fbbd-4eab-bbdf-037f49687351",
-                  "node_id_ref": "a77624ce-bff1-4d4a-ae27-ff64283ee184",
+                  "id": "f9332190-b9d5-4b95-8f36-2f539a82140e",
+                  "node_id_ref": "1ef4bb28-feea-4b19-87a2-cacc6195d395",
                   "port_id_ref": "outPort"
                 }
               ]
@@ -149,12 +149,7 @@
               "width": 197,
               "height": 49,
               "content": "Se encarga de crear el API para el modelo",
-              "associated_id_refs": [
-                {
-                  "id": "9ffa1447-a9fc-4b64-ba62-4b58e77c6644",
-                  "node_ref": "a77624ce-bff1-4d4a-ae27-ff64283ee184"
-                }
-              ]
+              "associated_id_refs": []
             },
             {
               "id": "0a9b14b6-9f4a-4aff-985d-3052f26a9240",
@@ -163,12 +158,7 @@
               "width": 273,
               "height": 45,
               "content": "Realiza peticiones al API del modelo para probarlo",
-              "associated_id_refs": [
-                {
-                  "id": "1ca212cb-0259-4ca2-96b8-2f671a3c6d27",
-                  "node_ref": "1371035b-ab17-467c-8d36-223072949642"
-                }
-              ]
+              "associated_id_refs": []
             },
             {
               "id": "b6d5e447-42f8-40ea-9219-ecea5191cccb",
