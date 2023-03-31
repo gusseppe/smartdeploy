@@ -35,6 +35,7 @@ COPY requirements.txt ./
 RUN pip3 install --no-cache-dir -r requirements.txt
 RUN apt-get clean && rm requirements.txt
 
+# Create Jupyter Notebook configuration file
 
 USER ${NB_UID}
 

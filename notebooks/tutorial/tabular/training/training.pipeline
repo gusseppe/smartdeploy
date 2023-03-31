@@ -327,13 +327,13 @@
         "version": 8,
         "properties": {
           "pipeline_defaults": {
-            "mounted_volumes": [],
             "kubernetes_shared_mem_size": {},
-            "kubernetes_pod_annotations": [],
-            "kubernetes_pod_labels": [],
             "kubernetes_tolerations": [],
-            "kubernetes_secrets": [],
+            "kubernetes_pod_labels": [],
+            "kubernetes_pod_annotations": [],
+            "mounted_volumes": [],
             "env_vars": [],
+            "kubernetes_secrets": [],
             "runtime_image": "tensorflow/tensorflow:2.8.0"
           },
           "name": "training",

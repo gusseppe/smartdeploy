@@ -1,6 +1,9 @@
 # SmartDeploy
 MLOps ecosystem to develop and deploy ML models.
 
+# Requirements
+- Windows: WSL and Docker Desktop
+- Linux: Docker and Docker-compose
 
 # Installation
 
