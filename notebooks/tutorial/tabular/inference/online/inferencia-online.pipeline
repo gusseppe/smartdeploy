@@ -154,7 +154,7 @@
             {
               "id": "0a9b14b6-9f4a-4aff-985d-3052f26a9240",
               "x_pos": 605.0000305175781,
-              "y_pos": 216.00000762939453,
+              "y_pos": 215.00000762939453,
               "width": 273,
               "height": 45,
               "content": "Realiza peticiones al API del modelo para probarlo",
