@@ -1,0 +1,8 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  - job_name: "ray_head"
+    static_configs:
+      - targets: ["ray-head:8001"] # Replace 8000 with the port on which your ray-head service exposes the metrics
+

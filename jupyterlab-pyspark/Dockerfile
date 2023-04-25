@@ -32,6 +32,7 @@ RUN jupyter lab  build --dev-build=False --minimize=False
 
 #  Install python packages
 COPY requirements.txt ./
+#RUN pip3 install -r requirements.txt
 RUN pip3 install --no-cache-dir -r requirements.txt
 RUN apt-get clean && rm requirements.txt
 

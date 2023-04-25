@@ -32,7 +32,7 @@
               "label": "serving",
               "image": "/static/elyra/notebook.svg",
               "x_pos": 198,
-              "y_pos": 307,
+              "y_pos": 306,
               "description": "Run notebook file"
             }
           },

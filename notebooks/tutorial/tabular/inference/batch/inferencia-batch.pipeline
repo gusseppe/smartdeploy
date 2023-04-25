@@ -31,7 +31,7 @@
               "label": "load_data",
               "image": "/static/elyra/notebook.svg",
               "x_pos": 168,
-              "y_pos": 258,
+              "y_pos": 257,
               "description": "Run notebook file"
             }
           },

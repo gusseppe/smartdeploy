@@ -120,11 +120,11 @@ services:
       - MLFLOW_S3_ENDPOINT_URL=http://s3:${MINIO_PORT}
       - AWS_ACCESS_KEY_ID=${MINIO_ACCESS_KEY}
       - AWS_SECRET_ACCESS_KEY=${MINIO_SECRET_ACCESS_KEY}
+      - RAY_GRAFANA_HOST=http://grafana:3000
+      - RAY_PROMETHEUS_HOST=http://prometheus:9090
       
   jenkins:
-    build: ./jenkins
-    # image: gusseppe/jenkins-smartdeploy
-    # image: jenkins/jenkins:lts
+    image: jenkins/jenkins:lts
     ports:
       - "8084:8080"
       - "50000:50000"
@@ -135,12 +135,57 @@ services:
       - "/var/run/docker.sock:/var/run/docker.sock"
     networks:
       - jenkins
+
+  docker:
+    image: docker:dind
+    privileged: true
+    environment:
+      - DOCKER_TLS_CERTDIR=/certs
+    volumes:
+      - "jenkins-docker-certs:/certs/client"
+    networks:
+      - jenkins
+
+  prometheus:
+    image: prom/prometheus:v2.32.0
+    container_name: prometheus
+    volumes:
+      - ./prometheus:/etc/prometheus
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/etc/prometheus/console_libraries'
+      - '--web.console.templates=/etc/prometheus/consoles'
+      - '--web.enable-lifecycle'
+    ports:
+      - '9090:9090'
+    networks:
+      - frontend
       - backend
+
+  grafana:
+    image: grafana/grafana:8.4.0
+    container_name: grafana
+    ports:
+      - '3000:3000'
+    networks:
+      - frontend
+      - backend
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+    volumes:
+      - grafana_data:/var/lib/grafana
+
 
 volumes:
   db_data:
   minio_data:
   jenkins-data:
+  jenkins-docker-certs:
+  prometheus_data:
+  grafana_data:
 
 networks:
   frontend:
