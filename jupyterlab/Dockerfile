@@ -3,7 +3,7 @@
 # Modified by Gusseppe Bravo
 
 ARG OWNER=jupyter
-ARG BASE_CONTAINER=$OWNER/all-spark-notebook
+ARG BASE_CONTAINER=$OWNER/all-spark-notebook:python-3.8
 FROM $BASE_CONTAINER
 
 LABEL maintainer="Jupyter Project <jupyter@googlegroups.com>"
@@ -27,15 +27,8 @@ RUN echo "NODE Version:" && node --version
 RUN echo "NPM Version:" && npm --version
 
 # Install Elyra
-RUN  pip3 install --upgrade pip==22.2.2  && pip3 install --no-cache-dir  --upgrade  elyra[all]
+RUN  pip3 install --upgrade pip==23.0.1  && pip3 install --no-cache-dir  --upgrade  elyra[all]==3.14.3
 RUN jupyter lab  build --dev-build=False --minimize=False
-
-# s3 browser
-RUN jupyter labextension install jupyterlab-s3-browser && \
-    pip3 install jupyterlab-s3-browser && \
-    jupyter serverextension enable --py jupyterlab_s3_browser && \
-    jupyter lab build && \
-    jupyter lab clean
 
 #  Install python packages
 COPY requirements.txt ./

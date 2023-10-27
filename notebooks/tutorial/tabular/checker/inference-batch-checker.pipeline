@@ -401,7 +401,7 @@
           "pipeline_defaults": {
             "runtime_image": "tensorflow/tensorflow:2.8.0"
           },
-          "name": "inference-batch",
+          "name": "inference-batch-checker",
           "runtime": "Generic"
         }
       },

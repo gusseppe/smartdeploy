@@ -87,7 +87,7 @@
               "label": "preprocessing",
               "image": "/static/elyra/notebook.svg",
               "x_pos": 490,
-              "y_pos": 257,
+              "y_pos": 256,
               "description": "Run notebook file"
             }
           },
@@ -245,11 +245,11 @@
         "version": 8,
         "properties": {
           "pipeline_defaults": {
-            "kubernetes_shared_mem_size": {},
-            "kubernetes_tolerations": [],
-            "mounted_volumes": [],
             "kubernetes_pod_annotations": [],
             "kubernetes_pod_labels": [],
+            "kubernetes_tolerations": [],
+            "kubernetes_shared_mem_size": {},
+            "mounted_volumes": [],
             "env_vars": [],
             "kubernetes_secrets": [],
             "runtime_image": "tensorflow/tensorflow:2.8.0"

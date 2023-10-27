@@ -89,7 +89,7 @@
               "label": "cliente",
               "image": "/static/elyra/notebook.svg",
               "x_pos": 667,
-              "y_pos": 309,
+              "y_pos": 310,
               "description": "Run notebook file"
             }
           },
@@ -174,7 +174,16 @@
         "version": 8,
         "properties": {
           "name": "inferencia-online",
-          "runtime": "Generic"
+          "runtime": "Generic",
+          "pipeline_defaults": {
+            "kubernetes_pod_annotations": [],
+            "kubernetes_pod_labels": [],
+            "kubernetes_tolerations": [],
+            "kubernetes_shared_mem_size": {},
+            "mounted_volumes": [],
+            "env_vars": [],
+            "kubernetes_secrets": []
+          }
         }
       },
       "runtime_ref": ""
