@@ -9,6 +9,9 @@ elif [[ $1 == "neo" ]]; then
 elif [[ $1 == "minimal" ]]; then
     compose_file="docker-compose-local-minimal.yml"
     printf "\e[1mWelcome to SmartDeploy local minimal\e[0m\n\n"
+elif [[ $1 == "full" ]]; then
+    compose_file="docker-compose-full.yml"
+    printf "\e[1mWelcome to SmartDeploy full version\e[0m\n\n"
 elif [[ $1 == "pyspark" ]]; then
     compose_file="docker-compose-local-pyspark.yml"
     printf "\e[1mWelcome to SmartDeploy local pyspark\e[0m\n\n"

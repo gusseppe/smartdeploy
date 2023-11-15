@@ -259,8 +259,8 @@
           "comments": [
             {
               "id": "670f6ea8-9b52-4bf3-8a6c-70d7922dbe91",
-              "x_pos": 278,
-              "y_pos": 143,
+              "x_pos": 289,
+              "y_pos": 152,
               "width": 175,
               "height": 60,
               "content": "Cargar data de entrenamiento y darle formato",
@@ -273,8 +273,8 @@
             },
             {
               "id": "5475b55d-7ca6-4aba-8c90-8226b75d51d4",
-              "x_pos": 512,
-              "y_pos": 144,
+              "x_pos": 532,
+              "y_pos": 159,
               "width": 175,
               "height": 45,
               "content": "Limpieza y creación de variables/features",
@@ -296,8 +296,8 @@
             },
             {
               "id": "d0659629-268d-4c21-aa4c-91d1314c3751",
-              "x_pos": 770,
-              "y_pos": 144,
+              "x_pos": 779,
+              "y_pos": 152,
               "width": 175,
               "height": 42,
               "content": "Creación del modelo",

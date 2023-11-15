@@ -147,7 +147,7 @@
               "label": "Check Integrity",
               "image": "/static/elyra/notebook.svg",
               "x_pos": 425,
-              "y_pos": 246.5,
+              "y_pos": 244.5,
               "description": "Run notebook file"
             }
           },

@@ -73,6 +73,15 @@ RUN set -x && \
             fix-permissions "/home/${NB_USER}"; \
     fi;
 
+
+# Install Apache Toree
+RUN pip install toree
+RUN jupyter toree install --sys-prefix --spark_home=${SPARK_HOME} --interpreters=Scala,PySpark,SparkSQL,SparkR,SQL
+
+# Change permissions on the directory for Apache Toree
+RUN fix-permissions $CONDA_DIR/share/jupyter
+
+
 USER ${NB_UID}
 
 WORKDIR "${HOME}"
