@@ -8,13 +8,13 @@ boto3==1.26.95
 findspark==2.0.1
 
 # Custom python packages
-pyreadstat==1.1.7          # Released: Oct 23, 2023
-statsmodels==0.14.0        # Released: May 5, 2023
-openpyxl==3.0.10           # Released: Mar 11, 2023
-wordcloud==1.8.2.2         # Released: May 18, 2023
-mat4py==0.6.0             # Released: Oct 6, 2023
 missingno==0.5.1           # Released: Feb 26, 2023
-optbinning==0.18.0         # Released: Sep 22, 2023
 funpymodeling==0.1.7     # Released: Jul 13, 2023
 imbalanced-learn==0.9.1    # Released: Jul 8, 2023
 psycopg2-binary==2.9.9   # Released: Oct 3, 2023
+openpyxl==3.0.10           # Released: Mar 11, 2023
+optbinning==0.18.0         # Released: Sep 22, 2023
+mat4py==0.6.0             # Released: Oct 6, 2023
+pyreadstat==1.1.7          # Released: Oct 23, 2023
+statsmodels==0.14.0        # Released: May 5, 2023
+wordcloud==1.8.2.2         # Released: May 18, 2023

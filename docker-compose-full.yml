@@ -74,7 +74,6 @@ services:
 
   jupyterlab:
     restart: always
-#build: ./jupyterlab-full
     image: gusseppe/smartdeploy:full
     container_name: jupyterlab
     working_dir: /home/${NB_USER}

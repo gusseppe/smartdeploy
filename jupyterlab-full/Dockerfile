@@ -13,6 +13,13 @@ COPY requirements.txt ./
 RUN pip3 install --no-cache-dir -r requirements.txt
 RUN apt-get clean && rm requirements.txt
 
+COPY r_requirements.txt /tmp/
+RUN mamba install --quiet --yes --file /tmp/r_requirements.txt && \
+    mamba clean --all -f -y && \
+    fix-permissions "${CONDA_DIR}" && \
+    fix-permissions "/home/${NB_USER}"
+
+
 USER ${NB_UID}
 
 WORKDIR "${HOME}"
