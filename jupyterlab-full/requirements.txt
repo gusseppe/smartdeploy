@@ -6,6 +6,7 @@ fastapi==0.88.0
 ray[serve]==2.2.0
 boto3==1.26.95
 findspark==2.0.1
+protobuf==3.20.0
 
 # Custom python packages
 missingno==0.5.1           # Released: Feb 26, 2023

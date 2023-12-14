@@ -165,8 +165,8 @@
               "x_pos": 71.00003051757812,
               "y_pos": 50,
               "width": 175,
-              "height": 60,
-              "content": "**Nota: este pipeline funciona con la version \"server\" de smartdeploy**",
+              "height": 84,
+              "content": "**Nota: este pipeline funciona con la version \"server\" o \"full\" de smartdeploy**",
               "associated_id_refs": []
             }
           ]

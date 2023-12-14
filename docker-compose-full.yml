@@ -102,6 +102,26 @@ services:
       - AWS_ACCESS_KEY_ID=${MINIO_ACCESS_KEY}
       - AWS_SECRET_ACCESS_KEY=${MINIO_SECRET_ACCESS_KEY}
 
+  ray-head:
+    restart: always
+    build: ./ray
+    image: rayproject/ray:2.2.0
+    container_name: ray
+    ports:
+      - "${REDISPORT}:6379"
+      - "${DASHBOARDPORT}:8265"
+      - "${HEADNODEPORT}:10001"
+      - "5010-5020:5010-5020"
+    command: bash -c "ray start --head --dashboard-port=${DASHBOARDPORT} --port=${REDISPORT} --dashboard-host=0.0.0.0 --redis-password=${REDISPASSWORD} --metrics-export-port=8001 --block"
+    networks:
+      - frontend
+      - backend
+    environment:
+      - MLFLOW_TRACKING_URI=http://tracking_server:5000
+      - MLFLOW_S3_ENDPOINT_URL=http://s3:${MINIO_PORT}
+      - AWS_ACCESS_KEY_ID=${MINIO_ACCESS_KEY}
+      - AWS_SECRET_ACCESS_KEY=${MINIO_SECRET_ACCESS_KEY}
+
 volumes:
   db_data:
   minio_data:
