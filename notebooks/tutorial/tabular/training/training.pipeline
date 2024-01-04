@@ -31,7 +31,7 @@
               "label": "preprocessing",
               "image": "/static/elyra/notebook.svg",
               "x_pos": 535,
-              "y_pos": 247.5,
+              "y_pos": 303.5,
               "description": "Run notebook file"
             }
           },
@@ -93,8 +93,8 @@
             "ui_data": {
               "label": "load_dataset",
               "image": "/static/elyra/notebook.svg",
-              "x_pos": 294,
-              "y_pos": 247.5,
+              "x_pos": 274,
+              "y_pos": 267.5,
               "description": "Run notebook file"
             }
           },
@@ -149,8 +149,8 @@
             "ui_data": {
               "label": "training",
               "image": "/static/elyra/notebook.svg",
-              "x_pos": 776,
-              "y_pos": 246,
+              "x_pos": 797,
+              "y_pos": 253,
               "description": "Run notebook file"
             }
           },

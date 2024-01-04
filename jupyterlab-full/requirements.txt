@@ -1,4 +1,4 @@
-# Base python packages
+# SmartDeploy packages
 mlflow==1.30.0
 rich==12.6.0
 deepchecks==0.9.2
@@ -7,8 +7,14 @@ ray[serve]==2.2.0
 boto3==1.26.95
 findspark==2.0.1
 protobuf==3.20.0
+ 
+# BigData cluster packages
+thrift-sasl==0.4.3
+thrift==0.16.0
+PyHive==0.7.0
 
-# Custom python packages
+
+# User python packages
 missingno==0.5.1           # Released: Feb 26, 2023
 funpymodeling==0.1.7     # Released: Jul 13, 2023
 imbalanced-learn==0.9.1    # Released: Jul 8, 2023
