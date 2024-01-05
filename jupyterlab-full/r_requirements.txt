@@ -4,7 +4,6 @@ r-dplyr
 r-tidyverse
 r-broom
 r-caret
-r-funmodeling
 r-dummies
 r-scorecard
 r-readxl

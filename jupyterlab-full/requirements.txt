@@ -16,11 +16,11 @@ PyHive==0.7.0
 
 # User python packages
 missingno==0.5.1           # Released: Feb 26, 2023
-funpymodeling==0.1.7     # Released: Jul 13, 2023
-imbalanced-learn==0.9.1    # Released: Jul 8, 2023
+#funpymodeling>=0.1.5     # Released: Jul 13, 2023
+imbalanced-learn>=0.9.1    # Released: Jul 8, 2023
 psycopg2-binary==2.9.9   # Released: Oct 3, 2023
 openpyxl==3.0.10           # Released: Mar 11, 2023
-optbinning==0.18.0         # Released: Sep 22, 2023
+optbinning>=0.18.0         # Released: Sep 22, 2023
 mat4py==0.6.0             # Released: Oct 6, 2023
 pyreadstat==1.1.7          # Released: Oct 23, 2023
 statsmodels==0.14.0        # Released: May 5, 2023

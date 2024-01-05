@@ -32,6 +32,10 @@ printf "[+] JupyterLab: \t ${BCyan}http://localhost:8889/lab${NC} token=jovyan\n
 printf "[+] Tracker [MLflow]:\t ${BCyan}http://localhost:5000 ${NC}\n"
 printf "[+] Tracker [Minio]:\t ${BCyan}http://localhost:9000 ${NC}\n"
 
+if [[ $1 == "full" ]]; then
+    printf "[+] Ray Dashboard :\t ${BCyan}http://localhost:8265 ${NC}\n"
+fi
+
 if [[ $1 == "server" ]]; then
     printf "[+] Ray Dashboard :\t ${BCyan}http://localhost:8265 ${NC}\n"
     echo "Waiting for Jenkins service to start up..."

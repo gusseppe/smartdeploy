@@ -10,6 +10,7 @@ RUN fix-permissions $CONDA_DIR/share/jupyter
 
 #  Install python packages
 COPY requirements.txt ./
+RUN pip uninstall ortools
 RUN pip3 install --no-cache-dir -r requirements.txt
 RUN apt-get clean && rm requirements.txt
 
