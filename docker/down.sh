@@ -18,11 +18,11 @@ elif [[ $1 == "pyspark" ]]; then
     printf "\n\n"
 elif [[ $1 == "full" ]]; then
     compose_file="docker-compose-full.yml"
-    printf "Welcome to SmartDeploy local pyspark\n"
+    printf "Shutting down SmartDeploy Full\n"
     printf "\n\n"
 else
-    compose_file="docker-compose-local.yml"
-    printf "Welcome to SmartDeploy local\n"
+    compose_file="docker-compose-full.yml"
+    printf "Shutting down SmartDeploy Full\n"
     printf "\n\n"
 fi
 

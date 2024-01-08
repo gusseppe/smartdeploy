@@ -1,7 +1,6 @@
 # Only save these notebooks
-notebooks/*
-!notebooks/tutorial
-!notebooks/smartdeploy
+docker/notebooks/*
+!docker/notebooks/tutorial
 
 #JupyterNotebooks
 .ipynb_checkpoints

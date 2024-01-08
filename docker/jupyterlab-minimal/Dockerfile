@@ -32,12 +32,9 @@ RUN jupyter lab  build --dev-build=False --minimize=False
 
 #  Install python packages
 COPY requirements.txt ./
-COPY requirements-user.txt ./
 RUN --mount=type=cache,target=/root/.cache/pip \
     pip3 install -r requirements.txt
-RUN --mount=type=cache,target=/root/.cache/pip \
-    pip3 install -r requirements-user.txt
-RUN apt-get clean && rm requirements.txt && rm requirements-user.txt
+RUN apt-get clean && rm requirements.txt
 
 USER ${NB_UID}
 

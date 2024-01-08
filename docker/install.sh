@@ -16,8 +16,8 @@ elif [[ $1 == "full" ]]; then
     compose_file="docker-compose-full.yml"
     printf "\e[1mWelcome to SmartDeploy full version\e[0m\n\n"
 else
-    compose_file="docker-compose-local.yml"
-    printf "\e[1mWelcome to SmartDeploy local\e[0m\n\n"
+    compose_file="docker-compose-full.yml"
+    printf "\e[1mWelcome to SmartDeploy full\e[0m\n\n"
 fi
 
 printf "\e[1mStarting the components...\e[0m\n\n"
