@@ -15,7 +15,7 @@ RUN pip3 install --no-cache-dir -r requirements.txt
 RUN apt-get clean && rm requirements.txt
 
 #  Copy tutorial
-COPY tutorial/ /home/jovyan/
+COPY docs/ /home/jovyan/
 
 COPY r_requirements.txt /tmp/
 RUN mamba install --quiet --yes --file /tmp/r_requirements.txt && \
