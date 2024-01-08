@@ -7,6 +7,7 @@ ray[serve]==2.2.0
 boto3==1.26.95
 findspark==2.0.1
 protobuf==3.20.0
+git+https://github.com/gusseppe/smartdeploy.git#egg=smartdeploy
  
 # BigData cluster packages
 thrift-sasl==0.4.3
