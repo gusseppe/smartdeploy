@@ -1,6 +1,6 @@
 # Only save these notebooks
-docker/notebooks/*
-!docker/notebooks/tutorial
+local/notebooks/*
+!local/notebooks/tutorial
 
 #JupyterNotebooks
 .ipynb_checkpoints
