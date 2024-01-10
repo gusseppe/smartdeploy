@@ -1,4 +1,4 @@
-# SmartDeploy
+# SmartDeploy Local
 MLOps ecosystem to develop and deploy ML models.
 
 # Requirements
