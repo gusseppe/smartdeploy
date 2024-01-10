@@ -7,54 +7,38 @@ MLOps ecosystem to develop and deploy ML models.
 
 # Installation
 
-- The script `./install.sh` downloads all the images and starts the containers.
-- The script `./run.sh` only starts the containers.
-- The script `./down.sh` shutdown the containers.
+- The script `./install.sh full` downloads all the images and starts the containers.
+- The script `./run.sh full` only starts the containers.
+- The script `./down.sh full` shutdown the containers.
 
 ## Linux
 
 - Install Docker and Docker compose
-- Run `./install.sh`
-- Then, only just `./run.sh`
+- Run `./install.sh full`
+- Then, only just `./run.sh full`
 
 ## Windows
 
 - Install Docker Desktop, then active Docker compose.
 - Install WSL2 and link with Docker Desktop.
 
-## Minimal mode
+# Usage
 
-It deploys the minimal components to write pipelines.
+Check the terminal's output for the urls:
 
-- Run `./install.sh minimal` (only run this once)
-- Then, only just `./run.sh minimal` (afterwards)
+[+] JupyterLab:          http://localhost:8889/lab token=jovyan
 
-## Minimal + Pyspark mode
+[+] Tracker [MLflow]:    http://localhost:5000
 
-It deploys the minimal components to write pipelines.
+[+] Tracker [Minio]:     http://localhost:9000
 
-- Run `./install.sh pyspark` (only run this once)
-- Then, only just `./run.sh pyspark` (afterwards)
-
-## Neo4j mode
-
-It deploys the minimal components plus Neo4j, it is meant for graph analysis.
-
-- Perform the installation as mentioned above.
-- Run `./install.sh neo` (only run this once)
-- Then, only just `./run.sh neo` (afterwards)
-
-## Server mode + jenkins
-
-It deploys the minimal components plus Ray Serve, it is meant for deployment scenarios.
-
-- Perform the installation as mentioned above.
-- Run `./install.sh server` (only run this once)
-- Then, only just `./run.sh server` (afterwards)
+[+] Ray Dashboard :      http://localhost:8265
 
 # Shutdown 
 
-- `./down.sh`
-- `./down.sh server`
-- `./down.sh neo`
+- `./down.sh full`
+
+# Other options
+
+- You can check the other docker-compose file for other flavours.
 
