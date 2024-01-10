@@ -1,6 +1,6 @@
 # SmartDeploy Local
 MLOps ecosystem to develop and deploy ML models.
-(check https://github.com/gusseppe/smartdeploy/tree/main/cluster for the cluster version)
+
 # Requirements
 - Windows: WSL and Docker Desktop
 - Linux: Docker and Docker-compose
