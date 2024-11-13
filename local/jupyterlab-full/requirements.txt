@@ -26,3 +26,4 @@ mat4py==0.6.0             # Released: Oct 6, 2023
 pyreadstat==1.1.7          # Released: Oct 23, 2023
 statsmodels==0.14.0        # Released: May 5, 2023
 wordcloud==1.8.2.2         # Released: May 18, 2023
+node2vec==0.4.3
