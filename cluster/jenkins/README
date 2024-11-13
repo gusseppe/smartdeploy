@@ -1,0 +1,85 @@
+
+# Instalación de Jenkins en Kubernetes
+
+Este proyecto contiene scripts para automatizar la instalación, configuración y desinstalación de Jenkins en Kubernetes usando Helm. La instalación incluye la creación de Volúmenes Persistentes (PVC), la modificación de la configuración de Jenkins y la espera hasta que el pod de Jenkins esté completamente listo antes de acceder a él.
+
+## Prerrequisitos
+
+- Cluster de Kubernetes 
+- kubectl instalado
+- Helm instalado
+- Python instalado (para la modificación de la configuración)
+- Docker instalado (para la descarga de imágenes)
+
+## Resumen de los scripts
+
+1. `init_files.sh`: Inicializa los archivos necesarios, incluyendo la descarga del Helm chart de Jenkins, la creación de un Persistent Volume Claim (PVC) y la generación del archivo de configuración por defecto `config-jenkins.yaml`.
+2. `modify_config.py`: Script en Python que modifica el archivo `config-jenkins.yaml` para agregar configuraciones personalizadas de Jenkins, como las credenciales de administrador, plugins, configuración de persistencia y servicio NodePort.
+3. `install_jenkins.sh`: Instala Jenkins utilizando Helm con la configuración modificada. Espera hasta que el pod de Jenkins esté listo y proporciona el NodePort para acceder a Jenkins.
+4. `remove_jenkins.sh`: Desinstala Jenkins del clúster de Kubernetes y limpia todos los recursos relacionados, incluyendo el Persistent Volume Claim (PVC).
+5. `download_images.sh`: Extrae las imágenes de Docker especificadas en el archivo `config-jenkins.yaml` y las descarga una por una.
+
+## Uso
+
+### Paso 1: Inicializar archivos
+
+Ejecuta el script `init_files.sh` para descargar el Helm chart de Jenkins, crear el PVC y generar el archivo de configuración por defecto.
+
+\`\`\`bash
+chmod +x init_files.sh
+./init_files.sh
+\`\`\`
+
+### Paso 2: Modificar la configuración de Jenkins
+
+Ejecuta el script `modify_config.py` para modificar el archivo `config-jenkins.yaml` con configuraciones personalizadas, como las credenciales de administrador, plugins y configuración del servicio.
+
+\`\`\`bash
+python modify_config.py
+\`\`\`
+
+### Paso 3: Descargar imágenes de Docker
+
+Ejecuta el script `download_images.sh` para extraer las imágenes especificadas en `config-jenkins.yaml` y descargarlas.
+
+\`\`\`bash
+chmod +x download_images.sh
+./download_images.sh
+\`\`\`
+
+### Paso 4: Instalar Jenkins
+
+Ejecuta el script `install_jenkins.sh` para instalar Jenkins. El script esperará hasta que el pod de Jenkins esté listo y luego recuperará el NodePort para acceder a Jenkins.
+
+\`\`\`bash
+chmod +x install_jenkins.sh
+./install_jenkins.sh
+\`\`\`
+
+Una vez que el pod esté listo, el script mostrará la URL para acceder a Jenkins:
+
+\`\`\`
+Jenkins está accesible en: http://localhost:<NodePort>
+\`\`\`
+
+### Paso 5: Desinstalar Jenkins
+
+Para eliminar Jenkins y todos los recursos relacionados, ejecuta el script `remove_jenkins.sh`:
+
+\`\`\`bash
+chmod +x remove_jenkins.sh
+./remove_jenkins.sh
+\`\`\`
+
+Esto desinstalará Jenkins y eliminará el PVC.
+
+---
+
+## Personalización
+
+- **Contraseña de Administrador de Jenkins**: Actualiza la variable `jenkins_password` en `modify_config.py` para establecer una contraseña segura para el usuario administrador de Jenkins.
+- **Plugins**: Modifica la lista de plugins en `modify_config.py` para instalar plugins adicionales durante la configuración.
+- **Límites de Recursos**: Ajusta las solicitudes y límites de recursos en `modify_config.py` para asignar más o menos recursos a Jenkins según tu entorno.
+
+---
+

@@ -2,6 +2,9 @@
 local/notebooks/*
 !local/notebooks/tutorial
 
+cluster/*
+!cluster/jenkins
+
 #JupyterNotebooks
 .ipynb_checkpoints
 */.ipynb_checkpoints/*

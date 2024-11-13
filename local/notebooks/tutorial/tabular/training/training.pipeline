@@ -30,8 +30,8 @@
             "ui_data": {
               "label": "preprocessing",
               "image": "/static/elyra/notebook.svg",
-              "x_pos": 535,
-              "y_pos": 303.5,
+              "x_pos": 576,
+              "y_pos": 280.5,
               "description": "Run notebook file"
             }
           },
@@ -93,8 +93,8 @@
             "ui_data": {
               "label": "load_dataset",
               "image": "/static/elyra/notebook.svg",
-              "x_pos": 274,
-              "y_pos": 267.5,
+              "x_pos": 295,
+              "y_pos": 264.5,
               "description": "Run notebook file"
             }
           },
